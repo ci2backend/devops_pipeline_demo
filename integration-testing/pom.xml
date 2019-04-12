@@ -132,6 +132,8 @@
                 <version>2.18</version>
                 <configuration>
                     <useSystemClassLoader>false</useSystemClassLoader>
+                    <forkCount>0</forkCount>
+                    <argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
                     <!-- Skips unit tests if the value of skip.unit.tests property is true -->
                     <skipTests>${skip.unit.tests}</skipTests>
                     <!-- Excludes integration tests when unit tests are run -->
@@ -157,6 +159,9 @@
                             <goal>verify</goal>
                         </goals>
                         <configuration>
+                            <useSystemClassLoader>false</useSystemClassLoader>
+                            <forkCount>0</forkCount>
+                            <argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
                             <!--
                                 Skips integration tests if the value of skip.integration.tests
                                 property is true
